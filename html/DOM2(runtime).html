@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+            function calc(){
+            var f1,s1,result;
+            f1= parseInt(fd.f1.value);
+            s1= parseInt(fd.s1.value);
+            result=f1+s1;
+           // document.getElementById("result").innerText = result;
+           var sp = document.createElement("span");
+           sp.innerText ="sum is "+result;
+           document.body.appendChild(sp);
+            }
+        </script>
+    </head>
+    <body >
+        <form name="fd">
+            <center>
+                <br>
+                Frist no ::
+                <input type="number" focus name="f1">
+                <br><br>
+                Second No ::
+                <input type="number" name="s1">
+                <br><br>
+                <input type="button" value="sum" name="sums" onclick="calc()"><br><br>
+                
+            </center>
+        </form>
+    </body>
+</html>

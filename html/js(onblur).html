@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script>
+            function show(){
+                var fn, ln,full;
+                f = fd.fn.value;
+                l = fd.ln.value;
+                full = f+" "+l;
+                fd.full.value = full;
+
+            }
+        </script>
+
+    </head>
+    <body>
+        <form name="fd">
+            <center>
+                <table border="5" align="center">
+                    <tr >
+                        <th colspan="2">
+                            welcome to fullname service
+                        </th>
+        
+                    </tr>
+                    <tr>
+                        <th>Frist Name </th>
+                        <td>
+                            <input type="text" name="fn">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Last Name </th>
+                        <td>
+                            <input type="text" name="ln" onblur="show()" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <th> Full Name</th>
+                        <td>
+                            <input type="text" name="full">
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </form>
+    </body>
+</html>

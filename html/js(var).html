@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+            function show(){
+                var result ="";
+                var stud = fd.student.value;
+              document.getElementById("result").innerHTML=stud;
+              //alert(stud);
+            }
+        </script>
+
+    </head>
+    <body>
+        <form name="fd">
+            <center>
+                Select student :: <br><br>
+                <Select name="student" onchange="show()">
+                    <option value="owais">Owais</option>
+                    <option value="fahad">Fahad</option>
+                    <option value="khalu">Khalu</option>
+                    <option value="ayaz">Ayaz</option>
+                    <option value="teja">Teja</option>
+                    <option value="pallavi">pallavi</option>
+                </Select>
+                <span id="result"></span>
+            </center>
+        </form>
+    </body>
+</html>

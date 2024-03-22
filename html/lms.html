@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <script>
+            var emp= [
+                "owais","fahad","ayaz","teja","pallavi","khalu"
+            ];
+            var manger = [
+                "rana","ravi","ahmed","sam","luke"
+            ];
+            function show(){
+                var today = new Date();
+                lms.ao.value=today.toISOString().substring(0,10);
+            }
+            function lsdv() {
+    var today = new Date();
+    var lsd = new Date(document.getElementsByName('lsd')[0].value);
+    var ms = lsd - today;
+    var days = ms / (1000 * 60 * 60 * 24);
+    days++;
+    if (days <= 0) {
+        document.getElementById("errorLeaveStartDate").innerHTML =
+            "Leave start date cannot be yesterday's date!!".fontcolor("red");
+        return;
+    } else {
+        document.getElementById("errorLeaveStartDate").innerHTML =
+            "";
+    }
+}
+function ledv(){
+    var today=new Date();
+    var led = new Date(document.getElementsByName('led')[0].value);
+    var ms = led - today;
+    var days = ms / (1000 * 60 * 60 * 24);
+    days++;
+    if (days <= 0) {
+        document.getElementById("errorLeaveEndDate").innerHTML =
+            "Leave end date cannot be yesterday's date!!";
+        return;
+    } else {
+        document.getElementById("errorLeaveEndDate").innerHTML =
+            "";
+    }
+    
+}
+function noofday() {
+    var lsd = new Date(document.getElementsByName('lsd')[0].value);
+    var led = new Date(document.getElementsByName('led')[0].value);
+    var ms = led - lsd;
+    var days = ms / (1000 * 60 * 60 * 24);
+    days++; // Including the start date in the count
+    document.getElementsByName('noofday')[0].value = days;
+}
+        </script>
+        <style>
+            form {
+                background-color: #f4f4f4;
+                padding: 20px;
+                margin: 10 auto;
+                width: 400px;
+                font-family: 'Times New Roman', Times, serif, sans-serif;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(52, 43, 43, 0.1);
+            }
+        
+            table {
+                width: 100%;
+                background: #cfc6dc;
+                
+            }
+        
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+
+        
+        </style>
+        
+    </head>
+     <body  onload="show()">
+        <form name="lms" class="lms" >
+            <table  border="3" align="center">
+                <tr>
+                    <th>Employee Name</th>
+                    <td>
+                        <select name="empname" id="">
+                            <option value="select">select</option>
+                            <script>
+                                for(var v in emp){
+                                    document.writeln("<option value ="+emp[v]+">"
+                                        +emp[v]+"</option>");
+                                }
+                            </script>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Manager Name</th>
+                    <td>
+                        <select name="mangername" id="">
+                            <option value="select">Manager</option>
+                            <script>
+                                for(var v in manger){
+                                    document.writeln("<option value= "+manger[v]+">"
+                                        +manger[v]+"</option>")}
+                            </script>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Leave Start Date</th>
+                    <td >
+                        <input type="date" name="lsd" onblur="lsdv()">
+                        <span id="errorLeaveStartDate" ></span>
+                    </td>
+
+                </tr>
+                <th>Leave End Date</th>
+                <td>
+                    <input type="date" name="led" onblur="ledv()">
+                    <span id="errorLeaveEndDate"></span>
+                </td>
+                <tr><th>No of day</th>
+                    <td>
+                        <input type="number" name="noofday" readonly onblur="noofday()">
+                    </td>
+                </tr>
+                <tr>
+                <th>Leave Type</th>
+                <td>
+                    <select name="lt" id=""><option value="select">select</option>
+                        <option value="el">Emergency Leave</option>
+                        <option value="pl">Personal Leave</option>
+                        <option value="ml">Maternity Leave</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                    <th>Leave Status</th>
+                    <td>
+                        <select name="ls" readonly>
+                            
+                            <option value="Pending">Pending</option>
+                            <option value="Approved">Approved</option>
+                            <option  value="Rejected">Rejected</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Applied on</th>
+                    <td>
+                        <input type="text" name="ao" id="" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Manager Comment
+                    </th>
+                    <td>
+                        <input type="text" name="mc" id="">
+                    </td>
+                </tr>
+            </table>
+        </form>
+     </body>
+</html>

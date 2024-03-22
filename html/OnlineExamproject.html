@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <script>
+        var question = [
+            "Number of primitive data types in Java are ?",
+            "When an array is passed to a method, what does the method receive?",
+            "When is the object created with new keyword?",
+            "Identify the corrected definition of a package.",
+            "In which of the following is toString() method defined?",
+            "compareTo() returns",
+            "To which of the following does the class string belong to.",
+            "Total constructor string class have?",
+            "Identify the return type of a method that does not return any value.",
+            "Identify the modifier which cannot be used for constructor."
+        ];
+
+        var questionNo=0;
+        var choosed = false;
+        var total = question.length;
+
+        var noofquestion = question.length; // Define the number of questions
+        var score = 0;
+        var ansChoosed = 0;
+var Answer = new Array(noofquestion);
+var correctanswer = new Array(total);
+for (var v = 0; v < noofquestion; v++) {
+    Answer[v] = new Array(4);
+}
+        Answer[0][0]="6";
+        Answer[0][1]="7";
+        Answer[0][2]="8";
+        Answer[0][3]="9";
+        correctanswer[0]=2;
+
+        Answer[1][0]="The refernce of array";
+        Answer[1][1]="A copy of Array";
+        Answer[1][2]="Lenth of the array";
+        Answer[1][3]="copy of first element";
+        correctanswer[1]=0;
+        
+        Answer[2][0]="At the runtime";
+        Answer[2][1]="At compile time";
+        Answer[2][2]="Depend on the code";
+        Answer[2][3]="None";
+        correctanswer[2]=0;
+
+        Answer[3][0]="Collection of Editing tools";
+        Answer[3][1]="collection of classes";
+        Answer[3][2]="collection of classes and interface";
+        Answer[3][3]="collection of interface";
+        correctanswer[3]=2;
+
+        Answer[4][0]="java.lang.Object";
+        Answer[4][1]="java.lang.String";
+        Answer[4][2]="java.lang.uttil";
+        Answer[4][3]="None";
+        correctanswer[4]=0;
+
+        Answer[5][0]="True";
+        Answer[5][1]="False";
+        Answer[5][2]="An int value";
+        Answer[5][3]="None";
+        correctanswer[5]=2;
+
+        Answer[6][0]="java.lang";
+        Answer[6][1]="java.awt";
+        Answer[6][2]="java.applet";
+        Answer[6][3]="java.string";
+        correctanswer[6]=0;
+
+        Answer[7][0]="3";
+        Answer[7][1]="7";
+        Answer[7][2]="13";
+        Answer[7][3]="20";
+        correctanswer[7]=2;
+
+        Answer[8][0]="int";
+        Answer[8][1]="void";
+        Answer[8][2]="double";
+        Answer[8][3]="None";
+        correctanswer[8]=1;
+
+        Answer[9][0]="public";
+        Answer[9][1]="protected";
+        Answer[9][2]="private";
+        Answer[9][3]="static";
+        correctanswer[9]=3;
+        function AnswerChoosed(ans){
+            ansChoosed = ans;
+            choosed =true;
+        }
+
+        function nextquestion(){
+            if(choosed==true){
+            if(ansChoosed==correctanswer[questionNo]){
+                score++;
+            }
+            questionNo++;
+            if(questionNo==total){
+                alert(" exam is over+" /n+" your total score is "+score);
+                questionNo=total-1;
+            }
+            loadQuestion();}
+        }
+        function loadQuestion(){
+    document.getElementById("questions").innerHTML = 
+    "("+(questionNo+1)+") : "+question[questionNo];
+    document.getElementById("Option0").innerHTML=
+    Answer[questionNo][0];
+    
+    document.getElementById("Option1").innerHTML=
+    Answer[questionNo][1];
+    document.getElementById("Option2").innerHTML=
+    Answer[questionNo][2];
+    document.getElementById("Option3").innerHTML=
+    Answer[questionNo][3];
+    document.getElementById("Opt1").checked = false;
+    document.getElementById("Opt2").checked = false;
+    document.getElementById("Opt3").checked = false;
+    document.getElementById("Opt4").checked = false;
+}
+
+        </script>
+        <style>
+            p.title{
+                color: rgb(15, 4, 56);
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 60px;
+                font-weight: bold;
+            }
+            div.mainform{
+                background: cornflowerblue;
+                border: 5px solid black;
+                color: rgb(13, 10, 10);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: bold;
+                margin: 10px;
+                padding: 10px;
+                width: 400px;
+            }
+        </style>
+    </head>
+    <body bgcolor="lightcyan" onload="loadQuestion()">
+        <p class="title">Java Test @Excelr</p>
+        <div class="mainform" align="left"><br><br>
+        <form name="fd" id="inputform1">
+            <p id="questions"> Java Question </p>
+            <input type="radio" name="optionR" id="Opt1" onclick="AnswerChoosed(1)">
+            <label id="Option0" name="Name1">1st Option</label><br>
+            <input type="radio" name="optionR" id="Opt2" onclick="AnswerChoosed(2)">
+            <label id="Option1" name="Name2">2nd Option</label><br>
+            <input type="radio" name="optionR" id="Opt3" onclick="AnswerChoosed(3)">
+            <label id="Option2" name="Name3">3rd Option</label><br>
+            <input type="radio" name="optionR" id="Opt4" onclick="AnswerChoosed(4)">
+            <label id="Option3" name="Name4">4th Option</label><br><br>
+            <input type="button" value="next" onclick="nextquestion()">
+
+        </form>
+    </div>
+    </body>
+</html>

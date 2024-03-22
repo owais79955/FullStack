@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <script>
+             function SUM() {
+                var firstNo, secondNo, result;
+                firstNo = frmCalc.firstNo.value;
+                secondNo = frmCalc.secondNo.value;
+                result = firstNo + secondNo;
+                frmCalc.result.value = result;
+            }
+
+            
+            function mult() {
+                var firstNo, secondNo, result;
+                firstNo = frmCalc.firstNo.value;
+                secondNo = frmCalc.secondNo.value;
+                result = firstNo * secondNo;
+                frmCalc.result.value = result;
+            }
+            function SUB() {
+                var firstNo, secondNo, result;
+                firstNo = frmCalc.firstNo.value;
+                secondNo = frmCalc.secondNo.value;
+                result = firstNo - secondNo;
+                frmCalc.result.value = result;
+            }
+        </script>
+
+    </head>
+    <body>
+        <form name="frmCalc">
+        <table border="5" align="center">
+            <tr>
+                <th colspan="2">
+                    Find SUM SUB MUL here
+                </th>
+
+            </tr>
+            <tr>
+                <th>Number 1</th>
+                <td>
+                    <input type="number" name="firstNo">
+                </td>
+
+            </tr>
+            <tr>
+                <th>Number 2</th>
+                <td>
+                    <input type="number" name="secondNo" id="">
+                </td>
+            </tr>
+            <tr>
+                <th>Result</th>
+                <td>
+                    <input type="number" name="result" >
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="SUM" onclick="SUM()">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="SUB" oncanplay="SUB()">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="MUL" onclick="mult()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>

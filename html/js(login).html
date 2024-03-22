@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script>
+            function doValidate(){
+                var UserName = fd.user.value;
+                var Password = fd.pass.value;
+                if (UserName=="owais" && Password=="owais"){
+                    window.open("http://www.google.com");
+                    
+                }
+                else{
+                    document.getElementById("error").textContent="error Moye moye!!";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="fd">
+        <table border="5" align="center">
+            <tr>
+                <th colspan="2">
+                    Login Form
+                </th>
+
+            </tr>
+            <tr>
+                <th>
+                    UserName 
+                </th>
+                <td>
+                    <input type="text" name ="user">
+                </td>
+                
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>
+                    <input type="text" name="pass" >
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span id="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <center>
+                    <input type="button" value="Login" onclick="doValidate()"></center>
+                </td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>

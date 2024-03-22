@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script>
+            
+                var question= [
+                    "1. html","2. css","3. javascript","4. java",
+                    "5. core java","6. spring","7. spring boot","8. micro service"
+                ];
+                var No = 0;
+                var total = question.length;
+                function show(){
+                    document.getElementById("qestions").innerHTML=question[No];
+
+                }
+                function next(){
+                    No++;
+                    show();
+                    if(No==total){
+                        alert("no more question");
+                        No=total-1;
+                        }
+                    show();
+                }
+                function prev(){
+                    No--;
+                    show();
+                    if(No<0){
+                        alert("no more previous");
+                        No=0;
+                    }
+                    show();
+                }
+            
+        </script>
+
+    </head>
+    <body onload="show()">
+        <p id="qestions">
+        </p><br><br>
+        <input type="button" value="next" onclick="next()">
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" value="Previous" onclick="prev()" >
+    </body>
+</html>

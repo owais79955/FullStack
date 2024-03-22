@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script>
+            function show(){
+                var result = "";
+                if(fd.checkowais.checked==true){
+                    result+="owais is present today ..<br>".fontcolor("green");
+
+                }
+                else{
+                    result += "owai is absent ..<br>".fontcolor("red");
+                }
+                if(fd.checkayaz.checked==true){
+                    result += "ayaz is present...<br>".fontcolor("green");
+                }else{
+                    result += "ayaz is absent...<br>".fontcolor("red");
+                }
+                if(fd.checkfahad.checked==true){
+                    result += "fahad is present..<br>".fontcolor("green");
+                }
+                else{
+                    result += "fahad is absent<br>".fontcolor("red");
+                }
+                    document.getElementById("result").innerHTML=result;
+
+                }
+            
+        </script>
+
+    </head>
+    <body>
+        <form name="fd">
+            <center>
+                <input type="checkbox" name ="checkowais"  onchange="show()">owais <br><br>
+                <input type="checkbox" name="checkayaz" onchange = "show()"> ayaz <br><br>
+                <input type="checkbox" name ="checkfahad" onchange = "show()">Fahad<br><br> 
+                <span id="result"></span>
+
+
+            </center>
+        </form>
+    </body>
+</html>
