@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            var news = [
+                    "News 1","News 2","News 3","News 4"
+                ];
+            function addNews() {
+                news.push("Hello");
+                show();
+            }
+            function delNews() {
+    news.splice(news.length - 1, 1);
+    show();
+}
+            
+            function show() {
+                
+                document.getElementById("news").innerHTML = news.length;
+            }
+        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    </head>
+    <body onload="show()">
+        <div class="container"> <br/><br/>
+            <a href="P1.html">News <span class="badge" id="news"></span> </a> <br/>
+            <a href="P2.html">Comments <span class="badge">12</span></a><br/>
+            <a href="P3.html">About <span class="badge">15</span> </a><br/> <hr/>
+            <input type="button" value="Add News" onclick="addNews()" />
+            <input type="button" value="delete News" onclick="delNews()" />
+        </div>
+    </body>
+</html>

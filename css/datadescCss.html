@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <style>
+        span[data-descr]{
+            position :relative;
+            text-decoration: dotted;
+            color: rgb(93, 93, 142);
+            cursor: help;
+        }
+        span[data-descr]:hover::after,
+                span[data-descr]:focus::after {
+                     content: attr(data-descr);
+                        position: absolute;
+                    left: 0;
+                    font-size: 20pt;}
+    </style>
+    </head>
+    <body>
+        Welcome to <span tabindex="0" data-descr="Provides and Training for
+        various courses">Excelr</span> Training...Right now 
+        Moring 3 to 5 <span tabindex="1" data-descr="Topic is CSS3 
+        alignment and tooltips going on">Topic</span> <br/>
+        Located in Hyderabad <span tabindex="2" data-descr="Cyber 
+        Towers Quadrant 2 4th, 5th and 8th floor">Cyber Towers</span>
+    </body>
+</html>

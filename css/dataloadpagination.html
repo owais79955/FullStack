@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script>
+                        var start=0;
+            var end=start+5;
+            function loadData() {
+                alert("Entered...");
+                start = 0;
+                end = start + 4;
+            }
+            function page2() {
+                alert("Page 2...");
+                start = 5;
+                end = start + 5;
+                alert(start);
+                alert(end);
+                dataLoad(start, end);
+            }
+
+            var employs = [
+                {empno:1,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:2,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:3,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:4,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:5,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:6,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:7,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:8,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:9,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:10,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:11,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:12,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:13,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:14,name:'BabaSai',dept:'Java',salary:84823},
+                {empno:15,name:'BabaSai',dept:'Java',salary:84823},
+            ]
+            var start = 0;
+            var end = start + 5;
+            function dataLoad(start, end) {
+                document.write("<table border=3 align=center>");
+                document.write("<tr><th>Employ No</th><th>Employ Name</th><th>Department</th><th>Salary</th></tr>");
+                for(var v=start;v<end;v++) {
+                    document.write("<tr><td>" +employs[v].empno +"</td>");
+                    document.write("<td>" +employs[v].name +"</td>");
+                    document.write("<td>" +employs[v].dept +"</td>");
+                    document.write("<td>" +employs[v].salary +"</td></tr>");
+                    
+                }
+                document.write("</table>");
+            }
+        </script>
+    </head>
+<body>
+    <script>
+        dataLoad(0,5);
+    </script>
+     <ul class="pagination pagination-lg">
+        <li><a href="javascript:datLoad(1,5)">1</a> </li>
+        <li><a href="javascript:dataLoad(5,10)">2</a> </li>
+        
+        <li ><a href="javascript:dataLoad(10,15)">3</a> </li>
+    </ul> <br/><hr/>
+</body>
+</html>
